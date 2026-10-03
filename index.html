@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إلى باستي ❤️</title>
+
+<style>
+
+/* =========================
+   الإعدادات العامة
+========================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    color:white;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #452050 0%,
+            #21102d 38%,
+            #0b0710 100%
+        );
+}
+
+/* =========================
+   النجوم
+========================= */
+
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+
+    background:white;
+    border-radius:50%;
+
+    opacity:.5;
+
+    animation:
+        twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.15;
+        transform:scale(.6);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.4);
+    }
+}
+
+/* =========================
+   القلوب الطائرة
+========================= */
+
+.heart{
+    position:fixed;
+    bottom:-40px;
+
+    pointer-events:none;
+
+    z-index:3;
+
+    animation:
+        floatHeart linear forwards;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:.9;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+/* =========================
+   الصفحات
+========================= */
+
+.page{
+    min-height:100vh;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        80px 20px 40px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.page.active{
+    display:flex;
+
+    animation:
+        pageIn .8s ease;
+}
+
+@keyframes pageIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.container{
+    width:100%;
+    max-width:720px;
+
+    text-align:center;
+}
+
+/* =========================
+   النصوص
+========================= */
+
+.small{
+    color:#dcb9e9;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:
+        clamp(42px,10vw,75px);
+
+    margin-bottom:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #f4b7dc,
+            #ffffff
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+h2{
+    font-size:
+        clamp(28px,7vw,45px);
+
+    margin-bottom:25px;
+}
+
+p{
+    color:#eaddea;
+
+    line-height:2;
+
+    font-size:18px;
+}
+
+/* =========================
+   البطاقات
+========================= */
+
+.card{
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border-radius:30px;
+
+    padding:
+        40px 28px;
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.45),
+
+        inset 0 1px
+        rgba(255,255,255,.08);
+}
+
+/* =========================
+   الأزرار
+========================= */
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    font-size:17px;
+
+    color:white;
+
+    padding:
+        15px 30px;
+
+    border-radius:50px;
+
+    margin:
+        10px 5px;
+
+    transition:
+        .3s ease;
+}
+
+.primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #c55c9e,
+            #8448ae
+        );
+
+    box-shadow:
+        0 10px 35px
+        rgba(197,92,158,.3);
+}
+
+.primary:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 45px
+        rgba(197,92,158,.5);
+}
+
+.secondary{
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+}
+
+.secondary:hover{
+
+    background:
+        rgba(255,255,255,.15);
+}
+
+/* =========================
+   الوردة 🌹
+========================= */
+
+.rose-container{
+
+    width:190px;
+    height:250px;
+
+    margin:
+        0 auto 25px;
+
+    position:relative;
+
+    animation:
+        roseAppear 1.5s ease;
+}
+
+@keyframes roseAppear{
+
+    from{
+        opacity:0;
+        transform:
+            scale(.5)
+            translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+/* ساق الوردة */
+
+.stem{
+
+    position:absolute;
+
+    width:8px;
+    height:145px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #174522,
+            #31713c,
+            #174522
+        );
+
+    left:91px;
+    top:83px;
+
+    border-radius:10px;
+
+    transform:
+        rotate(3deg);
+}
+
+/* ورقة */
+
+.leaf{
+
+    position:absolute;
+
+    width:65px;
+    height:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #245f32,
+            #388448
+        );
+
+    border-radius:
+        100% 0 100% 0;
+
+    top:155px;
+    left:35px;
+
+    transform:
+        rotate(-28deg);
+}
+
+/* الورقة الثانية */
+
+.leaf.two{
+
+    top:130px;
+    left:102px;
+
+    transform:
+        rotate(30deg)
+        scale(.85);
+}
+
+/* بتلات الوردة */
+
+.rose{
+
+    position:absolute;
+
+    width:105px;
+    height:105px;
+
+    top:15px;
+    left:43px;
+}
+
+/* كل بتلة */
+
+.petal{
+
+    position:absolute;
+
+    width:62px;
+    height:62px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffb0d4,
+            #e4498b 45%,
+            #9b1f5e 100%
+        );
+
+    border-radius:
+        70% 35% 70% 35%;
+
+    box-shadow:
+        inset -5px -5px 12px
+        rgba(80,0,35,.25);
+
+    transform-origin:
+        50% 90%;
+}
+
+/* ترتيب البتلات */
+
+.petal:nth-child(1){
+    top:0;
+    left:22px;
+    transform:rotate(0deg);
+}
+
+.petal:nth-child(2){
+    top:18px;
+    left:45px;
+    transform:rotate(55deg);
+}
+
+.petal:nth-child(3){
+    top:45px;
+    left:35px;
+    transform:rotate(115deg);
+}
+
+.petal:nth-child(4){
+    top:43px;
+    left:4px;
+    transform:rotate(180deg);
+}
+
+.petal:nth-child(5){
+    top:18px;
+    left:-2px;
+    transform:rotate(240deg);
+}
+
+.petal:nth-child(6){
+    top:25px;
+    left:20px;
+    transform:
+        rotate(300deg)
+        scale(.75);
+
+    z-index:5;
+}
+
+/* قلب الوردة */
+
+.rose-center{
+
+    position:absolute;
+
+    width:38px;
+    height:38px;
+
+    top:35px;
+    left:34px;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffcee3,
+            #d62e75 65%,
+            #8d164f
+        );
+
+    border-radius:50%;
+
+    z-index:10;
+
+    box-shadow:
+        0 0 20px
+        rgba(255,90,160,.4);
+}
+
+/* حركة خفيفة للوردة */
+
+.rose-container:hover .rose{
+
+    animation:
+        roseMove 1.2s ease-in-out infinite;
+}
+
+@keyframes roseMove{
+
+    0%,100%{
+        transform:rotate(-2deg);
+    }
+
+    50%{
+        transform:rotate(2deg);
+    }
+}
+
+/* =========================
+   القلب الكبير
+========================= */
+
+.big-heart{
+
+    display:block;
+
+    font-size:90px;
+
+    margin-bottom:10px;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.13);
+    }
+}
+
+/* =========================
+   الاقتباس
+========================= */
+
+.quote{
+
+    margin:
+        25px 0;
+
+    padding:
+        20px;
+
+    border-right:
+        3px solid #d477b4;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border-radius:
+        15px;
+
+    color:#f1d9eb;
+
+    font-size:20px;
+
+    line-height:1.9;
+}
+
+/* =========================
+   القائمة
+========================= */
+
+.list{
+
+    text-align:right;
+
+    margin:
+        25px auto;
+
+    max-width:520px;
+}
+
+.list div{
+
+    margin:
+        15px 0;
+
+    padding:
+        15px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border-radius:
+        15px;
+
+    color:#eaddec;
+}
+
+/* =========================
+   زر الموسيقى
+========================= */
+
+.music-button{
+
+    position:fixed;
+
+    top:18px;
+    left:18px;
+
+    z-index:100;
+
+    width:52px;
+    height:52px;
+
+    padding:0;
+
+    margin:0;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.10);
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    backdrop-filter:
+        blur(10px);
+
+    font-size:22px;
+}
+
+.music-button:hover{
+
+    transform:
+        scale(1.1);
+
+    background:
+        rgba(255,255,255,.18);
+}
+
+/* =========================
+   رسالة النهاية
+========================= */
+
+.final{
+
+    display:none;
+}
+
+.final.show{
+
+    display:block;
+
+    animation:
+        pageIn 1s ease;
+}
+
+.success{
+
+    font-size:70px;
+
+    margin-bottom:15px;
+
+    animation:
+        heartbeat 1.4s infinite;
+}
+
+/* =========================
+   زر الهروب 😂
+========================= */
+
+#noBtn{
+    position:relative;
+}
+
+/* =========================
+   شريط التقدم
+========================= */
+
+.progress{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    height:4px;
+
+    width:0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff8bc8,
+            #a86cff
+        );
+
+    z-index:999;
+
+    transition:.5s;
+}
+
+/* =========================
+   الهاتف
+========================= */
+
+@media(max-width:600px){
+
+    .card{
+
+        padding:
+            30px 18px;
+
+        border-radius:25px;
+    }
+
+    p{
+
+        font-size:16px;
+    }
+
+    button{
+
+        width:90%;
+
+        margin:
+            7px auto;
+    }
+
+    .quote{
+
+        font-size:17px;
+    }
+
+    .rose-container{
+
+        transform:scale(.85);
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     شريط التقدم
+========================= -->
+
+<div
+    class="progress"
+    id="progress">
+</div>
+
+
+<!-- =========================
+     زر الموسيقى
+========================= -->
+
+<button
+    class="music-button"
+    id="musicButton"
+    onclick="toggleMusic()">
+
+    🎵
+
+</button>
+
+
+<!-- =========================
+     النجوم
+========================= -->
+
+<div
+    class="stars"
+    id="stars">
+</div>
+
+
+<!-- =====================================================
+     الصفحة الأولى
+===================================================== -->
+
+<section
+    class="page active"
+    id="page1">
+
+    <div class="container">
+
+
+        <!-- الوردة -->
+
+        <div class="rose-container">
+
+            <div class="stem"></div>
+
+            <div class="leaf"></div>
+
+            <div class="leaf two"></div>
+
+            <div class="rose">
+
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+
+                <div class="rose-center"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="small">
+
+            ملف سري للغاية... 🌷
+
+        </div>
+
+
+        <h1>
+            إلى باستي
+        </h1>
+
+
+        <p>
+
+            عندي شيء صغير جدًا
+            أريد أن أقوله لك...
+
+        </p>
+
+
+        <br>
+
+
+        <button
+            class="primary"
+            onclick="startEverything()">
+
+            افتحي الرسالة 🌹
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     الصفحة الثانية
+===================================================== -->
+
+<section
+    class="page"
+    id="page2">
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="small">
+
+                🚨 تقرير رسمي 🚨
+
+            </div>
+
+
+            <h2>
+
+                تم اكتشاف خطأ...
+
+            </h2>
+
+
+            <p>
+
+                بعد التحقيقات والتحريات
+                الطويلة جدًا 😂
+
+                تم اكتشاف أن الشخص
+                المسؤول عن الخطأ هو...
+
+            </p>
+
+
+            <div class="quote">
+
+                أنا. 🙂💔
+
+            </div>
+
+
+            <p>
+
+                وأتيت اليوم لتقديم اعتذار
+                رسمي إلى صاحبة المكانة الخاصة...
+
+            </p>
+
+
+            <br>
+
+
+            <button
+                class="primary"
+                onclick="nextPage(3)">
+
+                أكملي التحقيق 👀
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     الصفحة الثالثة
+===================================================== -->
+
+<section
+    class="page"
+    id="page3">
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>
+
+                لماذا أخطأت؟
+
+            </h2>
+
+
+            <p>
+
+                لأنني لاحظت أنك تغيرتِ معي،
+                وبدل أن أفهم شعوري بهدوء
+                وأعطيك مساحتك...
+
+            </p>
+
+
+            <div class="quote">
+
+                بدأت ألومك وأعاتبك. 🥲
+
+            </div>
+
+
+            <p>
+
+                كنت أتصرف من خوفي أن أفقد
+                القرب الذي تعودت عليه،
+                وليس لأنني أردت أن أضايقك
+                أو أضغط عليكِ.
+
+            </p>
+
+
+            <button
+                class="primary"
+                onclick="nextPage(4)">
+
+                الحقيقة... ❤️
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     الصفحة الرابعة
+===================================================== -->
+
+<section
+    class="page"
+    id="page4">
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>
+
+                الحقيقة التي لم أقلها...
+
+            </h2>
+
+
+            <p>
+
+                ربما لم أعرف كيف أقولها وقتها،
+                لكن الحقيقة بسيطة جدًا:
+
+            </p>
+
+
+            <div class="quote">
+
+                لم أكن غاضبًا لأنك تغيرتِ...
+
+                <br>
+
+                كنت فقط أفتقد الطريقة
+                التي كنا نتحدث بها. ❤️
+
+            </div>
+
+
+            <p>
+
+                وعندما شعرت أن الأمور أصبحت
+                مختلفة، تصرفت بطريقة خاطئة
+                بدل أن أتحدث معك بهدوء.
+
+            </p>
+
+
+            <br>
+
+
+            <button
+                class="primary"
+                onclick="nextPage(5)">
+
+                والآن... الاعتذار 🥺
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     الصفحة الخامسة
+===================================================== -->
+
+<section
+    class="page"
+    id="page5">
+
+    <div class="container">
+
+        <div class="card">
+
+            <span class="big-heart">
+
+                🥺
+
+            </span>
+
+
+            <h2>
+
+                أنا آسف يا باستي
+
+            </h2>
+
+
+            <p>
+
+                آسف لأنني لم أتعامل
+                مع الموضوع بالطريقة الصحيحة.
+
+                <br><br>
+
+                آسف لأنني جعلتك تشعرين
+                أنني ألومك على تغيرك
+                بدل أن أحاول فهمك.
+
+                <br><br>
+
+                أنا لا أطلب منك أن تنسي
+                ما حدث في لحظة،
+                ولا أريد أن أضغط عليكِ
+                لتسامحيني.
+
+            </p>
+
+
+            <div class="quote">
+
+                كل ما أردته أن تعرفي
+                أنني فهمت خطئي. ❤️
+
+            </div>
+
+
+            <button
+                class="primary"
+                onclick="nextPage(6)">
+
+                بقي شيء واحد... 🌷
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     الصفحة السادسة
+===================================================== -->
+
+<section
+    class="page"
+    id="page6">
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>
+
+                ما الذي سأحاول تغييره؟
+
+            </h2>
+
+
+            <div class="list">
+
+                <div>
+
+                    🌷 سأتعلم أن أهدأ
+                    قبل أن أعاتب.
+
+                </div>
+
+
+                <div>
+
+                    🫶 سأحاول أن أفهم
+                    بدل أن أفترض.
+
+                </div>
+
+
+                <div>
+
+                    🌙 سأحترم مساحتك
+                    عندما تحتاجين إليها.
+
+                </div>
+
+
+                <div>
+
+                    ❤️ ولن أجعل خوفي من فقدانك
+                    سببًا لأضغط عليك.
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                لأن الصداقة الجميلة
+                لا تحتاج إلى ضغط...
+
+                <br>
+
+                تحتاج إلى فهم وراحة واحترام.
+
+            </p>
+
+
+            <button
+                class="primary"
+                onclick="nextPage(7)">
+
+                آخر صفحة... 😂
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     الصفحة السابعة
+===================================================== -->
+
+<section
+    class="page"
+    id="page7">
+
+    <div class="container">
+
+        <div class="card">
+
+            <span class="big-heart">
+
+                🌷
+
+            </span>
+
+
+            <h2>
+
+                والآن يا باستي...
+
+            </h2>
+
+
+            <p>
+
+                وصلنا إلى السؤال المصيري
+                في هذا الموقع الذي أخذ مني
+                وقتًا أكثر مما يجب 😂
+
+            </p>
+
+
+            <br>
+
+
+            <h2 style="font-size:30px;">
+
+                هل تقبلين اعتذاري؟ ❤️
+
+            </h2>
+
+
+            <br>
+
+
+            <button
+                class="primary"
+                onclick="acceptSorry()">
+
+                أقبل اعتذارك ❤️
+
+            </button>
+
+
+            <button
+                class="secondary"
+                id="noBtn"
+                onclick="moveNoButton()">
+
+                ما زلت زعلانة 😤
+
+            </button>
+
+
+            <!-- النهاية -->
+
+            <div
+                class="final"
+                id="finalMessage">
+
+
+                <br><br>
+
+
+                <div class="success">
+
+                    🥹❤️
+
+                </div>
+
+
+                <h2>
+
+                    شكرًا...
+
+                </h2>
+
+
+                <p>
+
+                    لم أكن أريد أكثر
+                    من أن يصل إليك اعتذاري.
+
+                    <br><br>
+
+                    وأعدك أن المرة القادمة
+                    عندما أشعر بشيء،
+                    سأتحدث معك بهدوء
+                    بدل أن أحول الموضوع
+                    إلى محكمة تحقيق 😂
+
+                    <br><br>
+
+                    <strong>
+
+                        باستي تبقى باستي. 🌷❤️
+
+                    </strong>
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =====================================================
+   إنشاء النجوم
+===================================================== */
+
+const stars =
+    document.getElementById("stars");
+
+
+for(let i=0; i<90; i++){
+
+    const star =
+        document.createElement("div");
+
+    star.className="star";
+
+    star.style.left =
+        Math.random()*100 + "%";
+
+    star.style.top =
+        Math.random()*100 + "%";
+
+    star.style.animationDelay =
+        Math.random()*3 + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* =====================================================
+   الصفحات
+===================================================== */
+
+let currentPage=1;
+
+
+function nextPage(number){
+
+    document
+        .getElementById(
+            "page"+currentPage
+        )
+        .classList.remove("active");
+
+
+    document
+        .getElementById(
+            "page"+number
+        )
+        .classList.add("active");
+
+
+    currentPage=number;
+
+
+    updateProgress();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   شريط التقدم
+===================================================== */
+
+function updateProgress(){
+
+    const percent =
+        ((currentPage-1)/6)*100;
+
+
+    document
+        .getElementById("progress")
+        .style.width =
+        percent+"%";
+
+}
+
+
+/* =====================================================
+   القلوب الطائرة
+===================================================== */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+
+    heart.className="heart";
+
+
+    const hearts=[
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "🌷",
+        "💜"
+    ];
+
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random()*hearts.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random()*100 + "%";
+
+
+    heart.style.fontSize =
+        (15+Math.random()*20)+"px";
+
+
+    heart.style.animationDuration =
+        (5+Math.random()*5)+"s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(
+        ()=>{
+            heart.remove();
+        },
+        10000
+    );
+
+}
+
+
+setInterval(
+    createHeart,
+    900
+);
+
+
+/* =====================================================
+   الموسيقى الهادئة
+   يتم توليدها بواسطة Web Audio API
+===================================================== */
+
+let audioContext;
+
+let masterGain;
+
+let musicTimer;
+
+let musicPlaying=false;
+
+let noteIndex=0;
+
+
+/* نغمات هادئة */
+
+const melody=[
+
+    261.63, // C4
+    329.63, // E4
+    392.00, // G4
+    329.63, // E4
+
+    293.66, // D4
+    349.23, // F4
+    440.00, // A4
+    349.23, // F4
+
+    261.63,
+    329.63,
+    392.00,
+    493.88,
+
+    440.00,
+    392.00,
+    329.63,
+    293.66
+
+];
+
+
+/* بدء الموسيقى */
+
+function startMusic(){
+
+    if(musicPlaying)
+        return;
+
+
+    audioContext =
+        new (
+            window.AudioContext ||
+            window.webkitAudioContext
+        )();
+
+
+    masterGain =
+        audioContext.createGain();
+
+
+    masterGain.gain.value =
+        0.045;
+
+
+    masterGain.connect(
+        audioContext.destination
+    );
+
+
+    musicPlaying=true;
+
+
+    playNextNote();
+
+
+    musicTimer =
+        setInterval(
+            playNextNote,
+            850
+        );
+
+
+    document
+        .getElementById("musicButton")
+        .innerHTML="🔊";
+}
+
+
+/* تشغيل نغمة */
+
+function playNextNote(){
+
+    if(!audioContext)
+        return;
+
+
+    const oscillator =
+        audioContext.createOscillator();
+
+
+    const gain =
+        audioContext.createGain();
+
+
+    const frequency =
+        melody[noteIndex];
+
+
+    oscillator.type="sine";
+
+
+    oscillator.frequency.value =
+        frequency;
+
+
+    gain.gain.setValueAtTime(
+        0,
+        audioContext.currentTime
+    );
+
+
+    gain.gain.linearRampToValueAtTime(
+        0.35,
+        audioContext.currentTime+0.12
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audioContext.currentTime+0.8
+    );
+
+
+    oscillator.connect(gain);
+
+    gain.connect(masterGain);
+
+
+    oscillator.start();
+
+    oscillator.stop(
+        audioContext.currentTime+0.85
+    );
+
+
+    noteIndex++;
+
+
+    if(noteIndex>=melody.length){
+
+        noteIndex=0;
+
+    }
+
+}
+
+
+/* تشغيل / إيقاف */
+
+function toggleMusic(){
+
+    if(!audioContext){
+
+        startMusic();
+
+        return;
+
+    }
+
+
+    if(musicPlaying){
+
+        clearInterval(musicTimer);
+
+        musicPlaying=false;
+
+        masterGain.gain.value=0;
+
+
+        document
+            .getElementById("musicButton")
+            .innerHTML="🔇";
+
+    }else{
+
+        masterGain.gain.value=0.045;
+
+        musicPlaying=true;
+
+        playNextNote();
+
+
+        musicTimer =
+            setInterval(
+                playNextNote,
+                850
+            );
+
+
+        document
+            .getElementById("musicButton")
+            .innerHTML="🔊";
+
+    }
+
+}
+
+
+/* =====================================================
+   أول ضغطة تبدأ الموقع + الموسيقى
+===================================================== */
+
+function startEverything(){
+
+    startMusic();
+
+    nextPage(2);
+
+}
+
+
+/* =====================================================
+   قبول الاعتذار
+===================================================== */
+
+function acceptSorry(){
+
+    document
+        .getElementById("finalMessage")
+        .classList.add("show");
+
+
+    document
+        .getElementById("noBtn")
+        .style.display="none";
+
+
+    for(let i=0;i<30;i++){
+
+        setTimeout(
+            createHeart,
+            i*100
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   زر "ما زلت زعلانة" 😂
+===================================================== */
+
+function moveNoButton(){
+
+    const button =
+        document.getElementById("noBtn");
+
+
+    const maxX =
+        window.innerWidth < 600
+        ? 80
+        : 220;
+
+
+    const maxY =
+        window.innerWidth < 600
+        ? 35
+        : 90;
+
+
+    const x =
+        (Math.random()*maxX*2)-maxX;
+
+
+    const y =
+        (Math.random()*maxY*2)-maxY;
+
+
+    button.style.transform =
+        `translate(${x}px,${y}px)`;
+
+}
+
+</script>
+
+</body>
+</html>
